@@ -17,7 +17,7 @@ KEYS = %w{
   group
 }
 
-host_inventory['cpu']
+#host_inventory['cpu']
 
 HOSTNAME = ARGV[1].split("/")[1]
 FILENAME = File.exist?("spec/#{HOSTNAME}/before.json") ? "after.json" : "before.json"
