@@ -1,13 +1,13 @@
 require 'spec_helper'
 require 'json'
 
-HOSTNAME = ARGV[1].split("/")[1]
+#HOSTNAME = ARGV[1].split("/")[1]
 
-before_fact = open("spec/#{HOSTNAME}/before.json") do |io|
+before_fact = open("spec/centos6_ssh/before.json") do |io|
   JSON.load(io)
 end
 
-after_fact = open("spec/#{HOSTNAME}/after.json") do |io|
+after_fact = open("spec/centos6_ssh/after.json") do |io|
   JSON.load(io)
 end
 
@@ -22,13 +22,13 @@ after_fact.each do |key1, val1|
         describe command("echo #{key2}: #{val2}") do
           its(:stdout) { should match /#{before_fact[key1][key2]}/ }
         end
-      elsif !val1.nil?
+      elsif !val2.nil?
         val2.each do |key3, val3|
           if val3.is_a?(String) then
             describe command("echo #{key3}: #{val3}") do
               its(:stdout) { should match /#{before_fact[key1][key2][key3]}/ }
             end
-          elsif !val2.nil?
+          elsif !val3.nil?
             val3.each do |key4, val4|
               if val4.is_a?(String) then
                 describe command("echo #{key4}: #{val4}") do
