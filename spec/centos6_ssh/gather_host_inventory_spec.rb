@@ -18,43 +18,19 @@ KEYS = %w{
 }
 
 host_inventory['cpu']
-puts "{"
+
+HOSTNAME = ARGV[1].split("/")[1]
+FILENAME = File.exist?("spec/#{HOSTNAME}/before.json") ? "after.json" : "before.json"
+puts "OUTPUT: " + FILENAME
+$stdout = File.open("spec/#{HOSTNAME}/#{FILENAME}", "w")
+
+fact = {}
 
 KEYS.each_with_index do |key, index|
-  if index != KEYS.size - 1
-    puts "\"#{key}\":" + host_inventory[key].to_json + ","
-  elsif
-    puts "\"#{key}\":" + host_inventory[key].to_json
-  end
+  hash = { key => host_inventory[key] }
+  fact.merge!(hash)
 end
 
-puts "}"
+puts JSON.pretty_generate(fact)
 
-=begin
-describe package('httpd'), :if => os[:family] == 'redhat' do
-  it { should be_installed }
-end
-
-describe package('apache2'), :if => os[:family] == 'ubuntu' do
-  it { should be_installed }
-end
-
-describe service('httpd'), :if => os[:family] == 'redhat' do
-  it { should be_enabled }
-  it { should be_running }
-end
-
-describe service('apache2'), :if => os[:family] == 'ubuntu' do
-  it { should be_enabled }
-  it { should be_running }
-end
-
-describe service('org.apache.httpd'), :if => os[:family] == 'darwin' do
-  it { should be_enabled }
-  it { should be_running }
-end
-
-describe port(80) do
-  it { should be_listening }
-end
-=end
+$stdout = STDOUT
