@@ -1,0 +1,806 @@
+{
+  "memory": null,
+  "hostname": null,
+  "domain": null,
+  "fqdn": null,
+  "platform": null,
+  "platform_version": null,
+  "filesystem": null,
+  "cpu": null,
+  "virtualization": null,
+  "kernel": null,
+  "block_device": null,
+  "user": null,
+  "group": null
+}
+08360kB",
+    "dirty": "32kB",
+    "writeback": "0kB",
+    "anon_pages": "130968kB",
+    "mapped": "81292kB",
+    "slab": "140020kB",
+    "slab_reclaimable": "111280kB",
+    "slab_unreclaim": "28740kB",
+    "page_tables": "2836kB",
+    "nfs_unstable": "0kB",
+    "bounce": "0kB",
+    "commit_limit": "5120564kB",
+    "committed_as": "1003472kB",
+    "vmalloc_total": "34359738367kB",
+    "vmalloc_used": "0kB",
+    "vmalloc_chunk": "0kB",
+    "annon_huge_pages": "0kB",
+    "huge_pages_total": "0",
+    "huge_pages_free": "0",
+    "huge_pages_rsvd": "0",
+    "huge_pages_surp": "0",
+    "huge_page_size": "2048kB"
+  },
+  "hostname": "ed215288b3c7",
+  "domain": "",
+  "fqdn": "ed215288b3c7",
+  "platform": "redhat",
+  "platform_version": "6.8",
+  "filesystem": {
+    "none": {
+      "kb_size": "61890340",
+      "kb_used": "38428568",
+      "kb_available": "20294848",
+      "percent_used": "66%",
+      "mount": "/"
+    },
+    "tmpfs": {
+      "kb_size": "1023544",
+      "kb_used": "0",
+      "kb_available": "1023544",
+      "percent_used": "0%",
+      "mount": "/sys/fs/cgroup"
+    },
+    "/dev/sda2": {
+      "kb_size": "61890340",
+      "kb_used": "38428568",
+      "kb_available": "20294848",
+      "percent_used": "66%",
+      "mount": "/etc/hosts"
+    },
+    "shm": {
+      "kb_size": "65536",
+      "kb_used": "0",
+      "kb_available": "65536",
+      "percent_used": "0%",
+      "mount": "/dev/shm"
+    }
+  },
+  "cpu": {
+    "total": "2",
+    "0": {
+      "vendor_id": "GenuineIntel",
+      "cpu_family": "6",
+      "model": "61",
+      "model_name": "Intel(R) Core(TM) i5-5250U CPU @ 1.60GHz",
+      "stepping": "4",
+      "cpu_mhz": "1598.837",
+      "cache_size": "3072KB",
+      "physical_id": "0",
+      "siblings": "1",
+      "core_id": "0",
+      "cpu_cores": "1",
+      "apicid": "0",
+      "initial_apicid": "0",
+      "fpu": "yes",
+      "fpu_exception": "yes",
+      "cpuid_level": "20",
+      "wp": "yes",
+      "flags": [
+        "fpu",
+        "vme",
+        "de",
+        "pse",
+        "tsc",
+        "msr",
+        "pae",
+        "mce",
+        "cx8",
+        "apic",
+        "sep",
+        "mtrr",
+        "pge",
+        "mca",
+        "cmov",
+        "pat",
+        "pse36",
+        "clflush",
+        "mmx",
+        "fxsr",
+        "sse",
+        "sse2",
+        "ss",
+        "ht",
+        "pbe",
+        "syscall",
+        "nx",
+        "pdpe1gb",
+        "lm",
+        "constant_tsc",
+        "rep_good",
+        "nopl",
+        "xtopology",
+        "nonstop_tsc",
+        "eagerfpu",
+        "pni",
+        "pclmulqdq",
+        "dtes64",
+        "ds_cpl",
+        "ssse3",
+        "sdbg",
+        "fma",
+        "cx16",
+        "xtpr",
+        "pcid",
+        "sse4_1",
+        "sse4_2",
+        "movbe",
+        "popcnt",
+        "aes",
+        "xsave",
+        "avx",
+        "f16c",
+        "rdrand",
+        "hypervisor",
+        "lahf_lm",
+        "abm",
+        "3dnowprefetch",
+        "fsgsbase",
+        "bmi1",
+        "avx2",
+        "bmi2",
+        "erms",
+        "xsaveopt",
+        "arat"
+      ],
+      "bogomips": "3197.67",
+      "clflush_size": "64",
+      "cache_alignment": "64",
+      "address_sizes": "39 bits physical, 48 bits virtual",
+      "power_management": ""
+    },
+    "1": {
+      "vendor_id": "GenuineIntel",
+      "cpu_family": "6",
+      "model": "61",
+      "model_name": "Intel(R) Core(TM) i5-5250U CPU @ 1.60GHz",
+      "stepping": "4",
+      "cpu_mhz": "1598.837",
+      "cache_size": "3072KB",
+      "physical_id": "1",
+      "siblings": "1",
+      "core_id": "0",
+      "cpu_cores": "1",
+      "apicid": "1",
+      "initial_apicid": "1",
+      "fpu": "yes",
+      "fpu_exception": "yes",
+      "cpuid_level": "20",
+      "wp": "yes",
+      "flags": [
+        "fpu",
+        "vme",
+        "de",
+        "pse",
+        "tsc",
+        "msr",
+        "pae",
+        "mce",
+        "cx8",
+        "apic",
+        "sep",
+        "mtrr",
+        "pge",
+        "mca",
+        "cmov",
+        "pat",
+        "pse36",
+        "clflush",
+        "mmx",
+        "fxsr",
+        "sse",
+        "sse2",
+        "ss",
+        "ht",
+        "pbe",
+        "syscall",
+        "nx",
+        "pdpe1gb",
+        "lm",
+        "constant_tsc",
+        "rep_good",
+        "nopl",
+        "xtopology",
+        "nonstop_tsc",
+        "eagerfpu",
+        "pni",
+        "pclmulqdq",
+        "dtes64",
+        "ds_cpl",
+        "ssse3",
+        "sdbg",
+        "fma",
+        "cx16",
+        "xtpr",
+        "pcid",
+        "sse4_1",
+        "sse4_2",
+        "movbe",
+        "popcnt",
+        "aes",
+        "xsave",
+        "avx",
+        "f16c",
+        "rdrand",
+        "hypervisor",
+        "lahf_lm",
+        "abm",
+        "3dnowprefetch",
+        "fsgsbase",
+        "bmi1",
+        "avx2",
+        "bmi2",
+        "erms",
+        "xsaveopt",
+        "arat"
+      ],
+      "bogomips": "3110.41",
+      "clflush_size": "64",
+      "cache_alignment": "64",
+      "address_sizes": "39 bits physical, 48 bits virtual",
+      "power_management": ""
+    }
+  },
+  "virtualization": {
+  },
+  "kernel": {
+    "machine": "x86_64",
+    "name": "Linux",
+    "release": "4.9.6-moby",
+    "version": "4.9.6",
+    "version_major": "4.9"
+  },
+  "block_device": {
+    "loop0": {
+      "rotational": "1",
+      "removable": "0",
+      "size": "0"
+    },
+    "loop1": {
+      "rotational": "1",
+      "removable": "0",
+      "size": "0"
+    },
+    "loop2": {
+      "rotational": "1",
+      "removable": "0",
+      "size": "0"
+    },
+    "loop3": {
+      "rotational": "1",
+      "removable": "0",
+      "size": "0"
+    },
+    "loop4": {
+      "rotational": "1",
+      "removable": "0",
+      "size": "0"
+    },
+    "loop5": {
+      "rotational": "1",
+      "removable": "0",
+      "size": "0"
+    },
+    "loop6": {
+      "rotational": "1",
+      "removable": "0",
+      "size": "0"
+    },
+    "loop7": {
+      "rotational": "1",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd0": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd1": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd10": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd11": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd12": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd13": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd14": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd15": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd2": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd3": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd4": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd5": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd6": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd7": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd8": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "nbd9": {
+      "rotational": "0",
+      "removable": "0",
+      "size": "0"
+    },
+    "sda": {
+      "model": "BHYVE SATA DISK",
+      "rev": "001",
+      "state": "running",
+      "timeout": "30",
+      "vendor": "ATA",
+      "rotational": "1",
+      "removable": "0",
+      "size": "134217728"
+    }
+  },
+  "user": {
+    "root": {
+      "name": "root",
+      "uid": "0",
+      "gid": "0",
+      "gecos": "root",
+      "directory": "/root",
+      "shell": "/bin/bash"
+    },
+    "bin": {
+      "name": "bin",
+      "uid": "1",
+      "gid": "1",
+      "gecos": "bin",
+      "directory": "/bin",
+      "shell": "/sbin/nologin"
+    },
+    "daemon": {
+      "name": "daemon",
+      "uid": "2",
+      "gid": "2",
+      "gecos": "daemon",
+      "directory": "/sbin",
+      "shell": "/sbin/nologin"
+    },
+    "adm": {
+      "name": "adm",
+      "uid": "3",
+      "gid": "4",
+      "gecos": "adm",
+      "directory": "/var/adm",
+      "shell": "/sbin/nologin"
+    },
+    "lp": {
+      "name": "lp",
+      "uid": "4",
+      "gid": "7",
+      "gecos": "lp",
+      "directory": "/var/spool/lpd",
+      "shell": "/sbin/nologin"
+    },
+    "sync": {
+      "name": "sync",
+      "uid": "5",
+      "gid": "0",
+      "gecos": "sync",
+      "directory": "/sbin",
+      "shell": "/bin/sync"
+    },
+    "shutdown": {
+      "name": "shutdown",
+      "uid": "6",
+      "gid": "0",
+      "gecos": "shutdown",
+      "directory": "/sbin",
+      "shell": "/sbin/shutdown"
+    },
+    "halt": {
+      "name": "halt",
+      "uid": "7",
+      "gid": "0",
+      "gecos": "halt",
+      "directory": "/sbin",
+      "shell": "/sbin/halt"
+    },
+    "mail": {
+      "name": "mail",
+      "uid": "8",
+      "gid": "12",
+      "gecos": "mail",
+      "directory": "/var/spool/mail",
+      "shell": "/sbin/nologin"
+    },
+    "uucp": {
+      "name": "uucp",
+      "uid": "10",
+      "gid": "14",
+      "gecos": "uucp",
+      "directory": "/var/spool/uucp",
+      "shell": "/sbin/nologin"
+    },
+    "operator": {
+      "name": "operator",
+      "uid": "11",
+      "gid": "0",
+      "gecos": "operator",
+      "directory": "/root",
+      "shell": "/sbin/nologin"
+    },
+    "games": {
+      "name": "games",
+      "uid": "12",
+      "gid": "100",
+      "gecos": "games",
+      "directory": "/usr/games",
+      "shell": "/sbin/nologin"
+    },
+    "gopher": {
+      "name": "gopher",
+      "uid": "13",
+      "gid": "30",
+      "gecos": "gopher",
+      "directory": "/var/gopher",
+      "shell": "/sbin/nologin"
+    },
+    "ftp": {
+      "name": "ftp",
+      "uid": "14",
+      "gid": "50",
+      "gecos": "FTP User",
+      "directory": "/var/ftp",
+      "shell": "/sbin/nologin"
+    },
+    "nobody": {
+      "name": "nobody",
+      "uid": "99",
+      "gid": "99",
+      "gecos": "Nobody",
+      "directory": "/",
+      "shell": "/sbin/nologin"
+    },
+    "vcsa": {
+      "name": "vcsa",
+      "uid": "69",
+      "gid": "69",
+      "gecos": "virtual console memory owner",
+      "directory": "/dev",
+      "shell": "/sbin/nologin"
+    },
+    "sshd": {
+      "name": "sshd",
+      "uid": "74",
+      "gid": "74",
+      "gecos": "Privilege-separated SSH",
+      "directory": "/var/empty/sshd",
+      "shell": "/sbin/nologin"
+    },
+    "test": {
+      "name": "test",
+      "uid": "500",
+      "gid": "500",
+      "gecos": "",
+      "directory": "/home/test",
+      "shell": "/bin/bash"
+    },
+    "test2": {
+      "name": "test2",
+      "uid": "501",
+      "gid": "501",
+      "gecos": "",
+      "directory": "/home/test2",
+      "shell": "/bin/bash"
+    },
+    "test3": {
+      "name": "test3",
+      "uid": "502",
+      "gid": "502",
+      "gecos": "",
+      "directory": "/home/test3",
+      "shell": "/bin/bash"
+    }
+  },
+  "group": {
+    "root": {
+      "name": "root",
+      "gid": "0",
+      "members": [
+
+      ]
+    },
+    "bin": {
+      "name": "bin",
+      "gid": "1",
+      "members": [
+        "bin",
+        "daemon"
+      ]
+    },
+    "daemon": {
+      "name": "daemon",
+      "gid": "2",
+      "members": [
+        "bin",
+        "daemon"
+      ]
+    },
+    "sys": {
+      "name": "sys",
+      "gid": "3",
+      "members": [
+        "bin",
+        "adm"
+      ]
+    },
+    "adm": {
+      "name": "adm",
+      "gid": "4",
+      "members": [
+        "adm",
+        "daemon"
+      ]
+    },
+    "tty": {
+      "name": "tty",
+      "gid": "5",
+      "members": [
+
+      ]
+    },
+    "disk": {
+      "name": "disk",
+      "gid": "6",
+      "members": [
+
+      ]
+    },
+    "lp": {
+      "name": "lp",
+      "gid": "7",
+      "members": [
+        "daemon"
+      ]
+    },
+    "mem": {
+      "name": "mem",
+      "gid": "8",
+      "members": [
+
+      ]
+    },
+    "kmem": {
+      "name": "kmem",
+      "gid": "9",
+      "members": [
+
+      ]
+    },
+    "wheel": {
+      "name": "wheel",
+      "gid": "10",
+      "members": [
+
+      ]
+    },
+    "mail": {
+      "name": "mail",
+      "gid": "12",
+      "members": [
+        "mail"
+      ]
+    },
+    "uucp": {
+      "name": "uucp",
+      "gid": "14",
+      "members": [
+
+      ]
+    },
+    "man": {
+      "name": "man",
+      "gid": "15",
+      "members": [
+
+      ]
+    },
+    "games": {
+      "name": "games",
+      "gid": "20",
+      "members": [
+
+      ]
+    },
+    "gopher": {
+      "name": "gopher",
+      "gid": "30",
+      "members": [
+
+      ]
+    },
+    "video": {
+      "name": "video",
+      "gid": "39",
+      "members": [
+
+      ]
+    },
+    "dip": {
+      "name": "dip",
+      "gid": "40",
+      "members": [
+
+      ]
+    },
+    "ftp": {
+      "name": "ftp",
+      "gid": "50",
+      "members": [
+
+      ]
+    },
+    "lock": {
+      "name": "lock",
+      "gid": "54",
+      "members": [
+
+      ]
+    },
+    "audio": {
+      "name": "audio",
+      "gid": "63",
+      "members": [
+
+      ]
+    },
+    "nobody": {
+      "name": "nobody",
+      "gid": "99",
+      "members": [
+
+      ]
+    },
+    "users": {
+      "name": "users",
+      "gid": "100",
+      "members": [
+
+      ]
+    },
+    "utmp": {
+      "name": "utmp",
+      "gid": "22",
+      "members": [
+
+      ]
+    },
+    "utempter": {
+      "name": "utempter",
+      "gid": "35",
+      "members": [
+
+      ]
+    },
+    "floppy": {
+      "name": "floppy",
+      "gid": "19",
+      "members": [
+
+      ]
+    },
+    "vcsa": {
+      "name": "vcsa",
+      "gid": "69",
+      "members": [
+
+      ]
+    },
+    "cdrom": {
+      "name": "cdrom",
+      "gid": "11",
+      "members": [
+
+      ]
+    },
+    "tape": {
+      "name": "tape",
+      "gid": "33",
+      "members": [
+
+      ]
+    },
+    "dialout": {
+      "name": "dialout",
+      "gid": "18",
+      "members": [
+
+      ]
+    },
+    "sshd": {
+      "name": "sshd",
+      "gid": "74",
+      "members": [
+
+      ]
+    },
+    "test": {
+      "name": "test",
+      "gid": "500",
+      "members": [
+
+      ]
+    },
+    "test2": {
+      "name": "test2",
+      "gid": "501",
+      "members": [
+
+      ]
+    },
+    "test3": {
+      "name": "test3",
+      "gid": "502",
+      "members": [
+
+      ]
+    }
+  }
+}

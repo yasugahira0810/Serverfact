@@ -1,0 +1,31 @@
+require 'spec_helper'
+require 'json'
+
+HOSTNAME = ARGV[1].split("/")[1]
+
+before_fact = open("spec/#{HOSTNAME}/before.json") do |io|
+  JSON.load(io)
+end
+
+after_fact = open("spec/#{HOSTNAME}/after.json") do |io|
+  JSON.load(io)
+end
+
+puts "memory: #{before_fact['memory']}"
+puts "class: #{before_fact['memory'].class}"
+puts "memory.total: #{before_fact['memory']['total']}"
+puts "class: #{before_fact['memory']['total'].class}"
+
+after_fact.each do |key, val|
+  describe command("echo #{key}=>#{val}") do
+    its(:stdout) { should match /#{before_fact[key]}/ }
+  end
+end
+
+=begin
+after_fact['ansible_facts']['ansible_local']['service_enabled'].each do |service|
+  describe command("echo #{service}") do
+    its(:stdout) { should match /#{before_fact['ansible_facts']['ansible_local']['service_enabled']["#{service[0]}"]}/ }
+  end
+end
+=end
