@@ -6,23 +6,23 @@
       "free": "4097020kB"
     },
     "total": "2047088kB",
-    "free": "1567512kB",
-    "buffers": "40264kB",
-    "cached": "257624kB",
-    "active": "250772kB",
-    "inactive": "162748kB",
-    "dirty": "20kB",
+    "free": "1564316kB",
+    "buffers": "41360kB",
+    "cached": "259328kB",
+    "active": "253284kB",
+    "inactive": "163160kB",
+    "dirty": "92kB",
     "writeback": "0kB",
-    "anon_pages": "115620kB",
-    "mapped": "81424kB",
-    "slab": "46652kB",
-    "slab_reclaimable": "27348kB",
-    "slab_unreclaim": "19304kB",
-    "page_tables": "2708kB",
+    "anon_pages": "115764kB",
+    "mapped": "81484kB",
+    "slab": "47120kB",
+    "slab_reclaimable": "27728kB",
+    "slab_unreclaim": "19392kB",
+    "page_tables": "2644kB",
     "nfs_unstable": "0kB",
     "bounce": "0kB",
     "commit_limit": "5120564kB",
-    "committed_as": "1037292kB",
+    "committed_as": "1033424kB",
     "vmalloc_total": "34359738367kB",
     "vmalloc_used": "0kB",
     "vmalloc_chunk": "0kB",
@@ -41,8 +41,8 @@
   "filesystem": {
     "none": {
       "kb_size": "61890340",
-      "kb_used": "38429708",
-      "kb_available": "20293708",
+      "kb_used": "38429772",
+      "kb_available": "20293644",
       "percent_used": "66%",
       "mount": "/"
     },
@@ -55,8 +55,8 @@
     },
     "/dev/sda2": {
       "kb_size": "61890340",
-      "kb_used": "38429708",
-      "kb_available": "20293708",
+      "kb_used": "38429772",
+      "kb_available": "20293644",
       "percent_used": "66%",
       "mount": "/etc/hosts"
     },
@@ -798,6 +798,80 @@
       "members": [
 
       ]
+    }
+  },
+  "service": {
+    "iptables": {
+      "0": "off",
+      "1": "off",
+      "2": "on",
+      "3": "on",
+      "4": "on",
+      "5": "on",
+      "6": "off"
+    },
+    "netconsole": {
+      "0": "off",
+      "1": "off",
+      "2": "off",
+      "3": "off",
+      "4": "off",
+      "5": "off",
+      "6": "off"
+    },
+    "netfs": {
+      "0": "off",
+      "1": "off",
+      "2": "off",
+      "3": "on",
+      "4": "on",
+      "5": "on",
+      "6": "off"
+    },
+    "network": {
+      "0": "off",
+      "1": "off",
+      "2": "on",
+      "3": "on",
+      "4": "on",
+      "5": "on",
+      "6": "off"
+    },
+    "rdisc": {
+      "0": "off",
+      "1": "off",
+      "2": "off",
+      "3": "off",
+      "4": "off",
+      "5": "off",
+      "6": "off"
+    },
+    "restorecond": {
+      "0": "off",
+      "1": "off",
+      "2": "off",
+      "3": "off",
+      "4": "off",
+      "5": "off",
+      "6": "off"
+    },
+    "sshd": {
+      "0": "off",
+      "1": "off",
+      "2": "on",
+      "3": "on",
+      "4": "on",
+      "5": "on",
+      "6": "off"
+    },
+    "udev-post": {
+      "0": "off",
+      "1": "on",
+      "2": "on",
+      "3": "on",
+      "4": "on",
+      "5": "on",
+      "6": "off"
     }
   }
 }
