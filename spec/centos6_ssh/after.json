@@ -6,23 +6,23 @@
       "free": "4097020kB"
     },
     "total": "2047088kB",
-    "free": "1363212kB",
-    "buffers": "75492kB",
-    "cached": "337256kB",
-    "active": "308616kB",
-    "inactive": "208416kB",
-    "dirty": "0kB",
+    "free": "1567512kB",
+    "buffers": "40264kB",
+    "cached": "257624kB",
+    "active": "250772kB",
+    "inactive": "162748kB",
+    "dirty": "20kB",
     "writeback": "0kB",
-    "anon_pages": "104232kB",
-    "mapped": "79960kB",
-    "slab": "147448kB",
-    "slab_reclaimable": "118136kB",
-    "slab_unreclaim": "29312kB",
-    "page_tables": "2360kB",
+    "anon_pages": "115620kB",
+    "mapped": "81424kB",
+    "slab": "46652kB",
+    "slab_reclaimable": "27348kB",
+    "slab_unreclaim": "19304kB",
+    "page_tables": "2708kB",
     "nfs_unstable": "0kB",
     "bounce": "0kB",
     "commit_limit": "5120564kB",
-    "committed_as": "973888kB",
+    "committed_as": "1037292kB",
     "vmalloc_total": "34359738367kB",
     "vmalloc_used": "0kB",
     "vmalloc_chunk": "0kB",
@@ -33,16 +33,16 @@
     "huge_pages_surp": "0",
     "huge_page_size": "2048kB"
   },
-  "hostname": "c2e3bc05cf38",
+  "hostname": "ed215288b3c7",
   "domain": "",
-  "fqdn": "c2e3bc05cf38",
+  "fqdn": "ed215288b3c7",
   "platform": "redhat",
-  "platform_version": "7.3.1611",
+  "platform_version": "6.8",
   "filesystem": {
     "none": {
       "kb_size": "61890340",
-      "kb_used": "38428892",
-      "kb_available": "20294524",
+      "kb_used": "38429708",
+      "kb_available": "20293708",
       "percent_used": "66%",
       "mount": "/"
     },
@@ -55,8 +55,8 @@
     },
     "/dev/sda2": {
       "kb_size": "61890340",
-      "kb_used": "38428892",
-      "kb_available": "20294524",
+      "kb_used": "38429708",
+      "kb_available": "20293708",
       "percent_used": "66%",
       "mount": "/etc/hosts"
     },
@@ -76,7 +76,7 @@
       "model": "61",
       "model_name": "Intel(R) Core(TM) i5-5250U CPU @ 1.60GHz",
       "stepping": "4",
-      "cpu_mhz": "1598.837",
+      "cpu_mhz": "1598.843",
       "cache_size": "3072KB",
       "physical_id": "0",
       "siblings": "1",
@@ -155,7 +155,7 @@
         "xsaveopt",
         "arat"
       ],
-      "bogomips": "3197.67",
+      "bogomips": "3197.68",
       "clflush_size": "64",
       "cache_alignment": "64",
       "address_sizes": "39 bits physical, 48 bits virtual",
@@ -167,7 +167,7 @@
       "model": "61",
       "model_name": "Intel(R) Core(TM) i5-5250U CPU @ 1.60GHz",
       "stepping": "4",
-      "cpu_mhz": "1598.837",
+      "cpu_mhz": "1598.843",
       "cache_size": "3072KB",
       "physical_id": "1",
       "siblings": "1",
@@ -246,7 +246,7 @@
         "xsaveopt",
         "arat"
       ],
-      "bogomips": "3110.41",
+      "bogomips": "2979.11",
       "clflush_size": "64",
       "cache_alignment": "64",
       "address_sizes": "39 bits physical, 48 bits virtual",
@@ -254,7 +254,6 @@
     }
   },
   "virtualization": {
-    "system": null
   },
   "kernel": {
     "machine": "x86_64",
@@ -468,6 +467,14 @@
       "directory": "/var/spool/mail",
       "shell": "/sbin/nologin"
     },
+    "uucp": {
+      "name": "uucp",
+      "uid": "10",
+      "gid": "14",
+      "gecos": "uucp",
+      "directory": "/var/spool/uucp",
+      "shell": "/sbin/nologin"
+    },
     "operator": {
       "name": "operator",
       "uid": "11",
@@ -482,6 +489,14 @@
       "gid": "100",
       "gecos": "games",
       "directory": "/usr/games",
+      "shell": "/sbin/nologin"
+    },
+    "gopher": {
+      "name": "gopher",
+      "uid": "13",
+      "gid": "30",
+      "gecos": "gopher",
+      "directory": "/var/gopher",
       "shell": "/sbin/nologin"
     },
     "ftp": {
@@ -500,29 +515,45 @@
       "directory": "/",
       "shell": "/sbin/nologin"
     },
-    "systemd-bus-proxy": {
-      "name": "systemd-bus-proxy",
-      "uid": "999",
-      "gid": "998",
-      "gecos": "systemd Bus Proxy",
-      "directory": "/",
+    "vcsa": {
+      "name": "vcsa",
+      "uid": "69",
+      "gid": "69",
+      "gecos": "virtual console memory owner",
+      "directory": "/dev",
       "shell": "/sbin/nologin"
     },
-    "systemd-network": {
-      "name": "systemd-network",
-      "uid": "998",
-      "gid": "997",
-      "gecos": "systemd Network Management",
-      "directory": "/",
+    "sshd": {
+      "name": "sshd",
+      "uid": "74",
+      "gid": "74",
+      "gecos": "Privilege-separated SSH",
+      "directory": "/var/empty/sshd",
       "shell": "/sbin/nologin"
     },
-    "dbus": {
-      "name": "dbus",
-      "uid": "81",
-      "gid": "81",
-      "gecos": "System message bus",
-      "directory": "/",
-      "shell": "/sbin/nologin"
+    "test": {
+      "name": "test",
+      "uid": "500",
+      "gid": "500",
+      "gecos": "",
+      "directory": "/home/test",
+      "shell": "/bin/bash"
+    },
+    "test2": {
+      "name": "test2",
+      "uid": "501",
+      "gid": "501",
+      "gecos": "",
+      "directory": "/home/test2",
+      "shell": "/bin/bash"
+    },
+    "test3": {
+      "name": "test3",
+      "uid": "502",
+      "gid": "502",
+      "gecos": "",
+      "directory": "/home/test3",
+      "shell": "/bin/bash"
     }
   },
   "group": {
@@ -537,28 +568,32 @@
       "name": "bin",
       "gid": "1",
       "members": [
-
+        "bin",
+        "daemon"
       ]
     },
     "daemon": {
       "name": "daemon",
       "gid": "2",
       "members": [
-
+        "bin",
+        "daemon"
       ]
     },
     "sys": {
       "name": "sys",
       "gid": "3",
       "members": [
-
+        "bin",
+        "adm"
       ]
     },
     "adm": {
       "name": "adm",
       "gid": "4",
       "members": [
-
+        "adm",
+        "daemon"
       ]
     },
     "tty": {
@@ -579,7 +614,7 @@
       "name": "lp",
       "gid": "7",
       "members": [
-
+        "daemon"
       ]
     },
     "mem": {
@@ -603,16 +638,16 @@
 
       ]
     },
-    "cdrom": {
-      "name": "cdrom",
-      "gid": "11",
-      "members": [
-
-      ]
-    },
     "mail": {
       "name": "mail",
       "gid": "12",
+      "members": [
+        "mail"
+      ]
+    },
+    "uucp": {
+      "name": "uucp",
+      "gid": "14",
       "members": [
 
       ]
@@ -624,20 +659,6 @@
 
       ]
     },
-    "dialout": {
-      "name": "dialout",
-      "gid": "18",
-      "members": [
-
-      ]
-    },
-    "floppy": {
-      "name": "floppy",
-      "gid": "19",
-      "members": [
-
-      ]
-    },
     "games": {
       "name": "games",
       "gid": "20",
@@ -645,8 +666,8 @@
 
       ]
     },
-    "tape": {
-      "name": "tape",
+    "gopher": {
+      "name": "gopher",
       "gid": "30",
       "members": [
 
@@ -655,6 +676,13 @@
     "video": {
       "name": "video",
       "gid": "39",
+      "members": [
+
+      ]
+    },
+    "dip": {
+      "name": "dip",
+      "gid": "40",
       "members": [
 
       ]
@@ -708,44 +736,65 @@
 
       ]
     },
-    "input": {
-      "name": "input",
-      "gid": "999",
+    "floppy": {
+      "name": "floppy",
+      "gid": "19",
       "members": [
 
       ]
     },
-    "systemd-journal": {
-      "name": "systemd-journal",
-      "gid": "190",
+    "vcsa": {
+      "name": "vcsa",
+      "gid": "69",
       "members": [
 
       ]
     },
-    "systemd-bus-proxy": {
-      "name": "systemd-bus-proxy",
-      "gid": "998",
+    "cdrom": {
+      "name": "cdrom",
+      "gid": "11",
       "members": [
 
       ]
     },
-    "systemd-network": {
-      "name": "systemd-network",
-      "gid": "997",
+    "tape": {
+      "name": "tape",
+      "gid": "33",
       "members": [
 
       ]
     },
-    "dbus": {
-      "name": "dbus",
-      "gid": "81",
+    "dialout": {
+      "name": "dialout",
+      "gid": "18",
       "members": [
 
       ]
     },
-    "ssh_keys": {
-      "name": "ssh_keys",
-      "gid": "996",
+    "sshd": {
+      "name": "sshd",
+      "gid": "74",
+      "members": [
+
+      ]
+    },
+    "test": {
+      "name": "test",
+      "gid": "500",
+      "members": [
+
+      ]
+    },
+    "test2": {
+      "name": "test2",
+      "gid": "501",
+      "members": [
+
+      ]
+    },
+    "test3": {
+      "name": "test3",
+      "gid": "502",
       "members": [
 
       ]

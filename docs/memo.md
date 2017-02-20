@@ -1,5 +1,2 @@
-# JSONの扱い
-
-- RubyでハッシュをJSONに変換する方法にはto_jsonとJSON.generate(Hash)があるらしい。 
-generate_prettyを使いたかったが、厳格なハッシュじゃない（nilとかだ）とERRORが出てしまって  
-解消に時間がかかりそうなので、一旦to_jsonを使うことにする。
+host_inventory['user']追加
+https://github.com/mizzy/specinfra/commit/340494be494f74e1114f6e1a2f34a6e6514195f6
