@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'json'
-require './spec/centos6_ssh/chkconfig.rb'
+require './spec/chkconfig.rb'
 
 KEYS = %w{
   memory
@@ -18,13 +18,7 @@ KEYS = %w{
   group
 }
 
-
-#puts host_inventory['cpu']
-
-HOSTNAME = ARGV[1].split("/")[1]
-FILENAME = File.exist?("spec/#{HOSTNAME}/before.json") ? "after.json" : "before.json"
-puts "OUTPUT: " + FILENAME
-$stdout = File.open("spec/#{HOSTNAME}/#{FILENAME}", "w")
+$stdout = File.open("spec/#{ENV['TARGET_HOST']}/#{ENV['FACT_TIMING']}.json", "w")
 
 fact = {}
 
