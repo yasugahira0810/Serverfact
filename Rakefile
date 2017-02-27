@@ -6,7 +6,6 @@ task :default => :spec
 
 namespace :before do
   targets = []
-  ENV['FACT_TIMING'] = "before"
   Dir.glob('./spec/*').each do |dir|
     next unless File.directory?(dir)
     target = File.basename(dir)
@@ -21,6 +20,7 @@ namespace :before do
     original_target = target == "_default" ? target[1..-1] : target
     desc "Gather fact of #{original_target}"
     RSpec::Core::RakeTask.new(target.to_sym) do |t|
+      ENV['FACT_TIMING'] = "before"
       ENV['TARGET_HOST'] = original_target
       t.pattern = "spec/gather_fact_spec.rb"
     end
@@ -29,7 +29,6 @@ end
 
 namespace :after do
   targets = []
-  ENV['FACT_TIMING'] = "after"
   Dir.glob('./spec/*').each do |dir|
     next unless File.directory?(dir)
     target = File.basename(dir)
@@ -42,10 +41,11 @@ namespace :after do
 
   targets.each do |target|
     original_target = target == "_default" ? target[1..-1] : target
-    desc "Run serverspec tests to #{original_target}"
+    desc "Gather fact of #{original_target}"
     RSpec::Core::RakeTask.new(target.to_sym) do |t|
+      ENV['FACT_TIMING'] = "after"
       ENV['TARGET_HOST'] = original_target
-      t.pattern = "spec/gather_fact_after_spec.rb"
+      t.pattern = "spec/gather_fact_spec.rb"
     end
   end
 end

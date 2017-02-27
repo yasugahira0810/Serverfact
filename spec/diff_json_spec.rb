@@ -3,11 +3,11 @@ require 'json'
 
 #HOSTNAME = ARGV[1].split("/")[1]
 
-before_fact = open("spec/centos6_ssh/before.json") do |io|
+before_fact = open("spec/#{ENV['TARGET_HOST']}/before.json") do |io|
   JSON.load(io)
 end
 
-after_fact = open("spec/centos6_ssh/after.json") do |io|
+after_fact = open("spec/#{ENV['TARGET_HOST'] }/after.json") do |io|
   JSON.load(io)
 end
 
@@ -52,11 +52,3 @@ after_fact.each do |key1, val1|
     end
   end
 end
-
-=begin
-after_fact['ansible_facts']['ansible_local']['service_enabled'].each do |service|
-  describe command("echo #{service}") do
-    its(:stdout) { should match /#{before_fact['ansible_facts']['ansible_local']['service_enabled']["#{service[0]}"]}/ }
-  end
-end
-=end

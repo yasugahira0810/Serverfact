@@ -17,7 +17,7 @@ KEYS = %w{
   user
   group
 }
-
+puts "******* #{ENV['TARGET_HOST']}/#{ENV['FACT_TIMING']} ********"
 $stdout = File.open("spec/#{ENV['TARGET_HOST']}/#{ENV['FACT_TIMING']}.json", "w")
 
 fact = {}
