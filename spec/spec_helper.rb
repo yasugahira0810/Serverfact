@@ -7,8 +7,6 @@ else
   
   set :backend, :ssh
 
-puts "#{$0}, #{ARGV[0]}"
-  
   if ENV['ASK_SUDO_PASSWORD']
     begin
       require 'highline/import'

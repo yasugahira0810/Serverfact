@@ -1,6 +1,10 @@
 require 'spec_helper'
 require 'json'
-require './spec/chkconfig.rb'
+if host_inventory['platform'] == "redhat" && host_inventory['platform_version'].to_i < 7 then
+  require './spec/chkconfig.rb'
+elsif host_inventory['platform'] == "redhat" && host_inventory['platform_version'].to_i >= 7 then
+  require './spec/systemctl.rb'
+end
 
 KEYS = %w{
   memory
@@ -17,7 +21,7 @@ KEYS = %w{
   user
   group
 }
-puts "******* #{ENV['TARGET_HOST']}/#{ENV['FACT_TIMING']} ********"
+
 $stdout = File.open("spec/#{ENV['TARGET_HOST']}/#{ENV['FACT_TIMING']}.json", "w")
 
 fact = {}
