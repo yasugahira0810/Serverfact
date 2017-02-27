@@ -6,23 +6,23 @@
       "free": "4097020kB"
     },
     "total": "2047088kB",
-    "free": "1374640kB",
-    "buffers": "71356kB",
-    "cached": "336616kB",
-    "active": "304740kB",
-    "inactive": "208972kB",
-    "dirty": "28kB",
+    "free": "1586976kB",
+    "buffers": "36240kB",
+    "cached": "257204kB",
+    "active": "231832kB",
+    "inactive": "164952kB",
+    "dirty": "80kB",
     "writeback": "0kB",
-    "anon_pages": "105728kB",
-    "mapped": "82344kB",
-    "slab": "139488kB",
-    "slab_reclaimable": "111000kB",
-    "slab_unreclaim": "28488kB",
-    "page_tables": "2592kB",
+    "anon_pages": "103320kB",
+    "mapped": "81096kB",
+    "slab": "45476kB",
+    "slab_reclaimable": "26724kB",
+    "slab_unreclaim": "18752kB",
+    "page_tables": "2396kB",
     "nfs_unstable": "0kB",
     "bounce": "0kB",
     "commit_limit": "5120564kB",
-    "committed_as": "973396kB",
+    "committed_as": "848644kB",
     "vmalloc_total": "34359738367kB",
     "vmalloc_used": "0kB",
     "vmalloc_chunk": "0kB",
@@ -41,8 +41,8 @@
   "filesystem": {
     "none": {
       "kb_size": "61890340",
-      "kb_used": "38428544",
-      "kb_available": "20294872",
+      "kb_used": "38430744",
+      "kb_available": "20292672",
       "percent_used": "66%",
       "mount": "/"
     },
@@ -55,8 +55,8 @@
     },
     "/dev/sda2": {
       "kb_size": "61890340",
-      "kb_used": "38428544",
-      "kb_available": "20294872",
+      "kb_used": "38430744",
+      "kb_available": "20292672",
       "percent_used": "66%",
       "mount": "/etc/hosts"
     },
@@ -76,7 +76,7 @@
       "model": "61",
       "model_name": "Intel(R) Core(TM) i5-5250U CPU @ 1.60GHz",
       "stepping": "4",
-      "cpu_mhz": "1598.837",
+      "cpu_mhz": "1598.827",
       "cache_size": "3072KB",
       "physical_id": "0",
       "siblings": "1",
@@ -155,7 +155,7 @@
         "xsaveopt",
         "arat"
       ],
-      "bogomips": "3197.67",
+      "bogomips": "3197.65",
       "clflush_size": "64",
       "cache_alignment": "64",
       "address_sizes": "39 bits physical, 48 bits virtual",
@@ -167,7 +167,7 @@
       "model": "61",
       "model_name": "Intel(R) Core(TM) i5-5250U CPU @ 1.60GHz",
       "stepping": "4",
-      "cpu_mhz": "1598.837",
+      "cpu_mhz": "1598.827",
       "cache_size": "3072KB",
       "physical_id": "1",
       "siblings": "1",
@@ -246,7 +246,7 @@
         "xsaveopt",
         "arat"
       ],
-      "bogomips": "3110.41",
+      "bogomips": "3051.74",
       "clflush_size": "64",
       "cache_alignment": "64",
       "address_sizes": "39 bits physical, 48 bits virtual",
@@ -538,6 +538,22 @@
       "gecos": "",
       "directory": "/home/test",
       "shell": "/bin/bash"
+    },
+    "test2": {
+      "name": "test2",
+      "uid": "501",
+      "gid": "501",
+      "gecos": "",
+      "directory": "/home/test2",
+      "shell": "/bin/bash"
+    },
+    "test3": {
+      "name": "test3",
+      "uid": "502",
+      "gid": "502",
+      "gecos": "",
+      "directory": "/home/test3",
+      "shell": "/bin/bash"
     }
   },
   "group": {
@@ -768,6 +784,94 @@
       "members": [
 
       ]
+    },
+    "test2": {
+      "name": "test2",
+      "gid": "501",
+      "members": [
+
+      ]
+    },
+    "test3": {
+      "name": "test3",
+      "gid": "502",
+      "members": [
+
+      ]
+    }
+  },
+  "service": {
+    "iptables": {
+      "0": "off",
+      "1": "off",
+      "2": "on",
+      "3": "on",
+      "4": "on",
+      "5": "on",
+      "6": "off"
+    },
+    "netconsole": {
+      "0": "off",
+      "1": "off",
+      "2": "off",
+      "3": "off",
+      "4": "off",
+      "5": "off",
+      "6": "off"
+    },
+    "netfs": {
+      "0": "off",
+      "1": "off",
+      "2": "off",
+      "3": "on",
+      "4": "on",
+      "5": "on",
+      "6": "off"
+    },
+    "network": {
+      "0": "off",
+      "1": "off",
+      "2": "on",
+      "3": "on",
+      "4": "on",
+      "5": "on",
+      "6": "off"
+    },
+    "rdisc": {
+      "0": "off",
+      "1": "off",
+      "2": "off",
+      "3": "off",
+      "4": "off",
+      "5": "off",
+      "6": "off"
+    },
+    "restorecond": {
+      "0": "off",
+      "1": "off",
+      "2": "off",
+      "3": "off",
+      "4": "off",
+      "5": "off",
+      "6": "off"
+    },
+    "sshd": {
+      "0": "off",
+      "1": "off",
+      "2": "on",
+      "3": "on",
+      "4": "on",
+      "5": "on",
+      "6": "off"
+    },
+    "udev-post": {
+      "0": "off",
+      "1": "on",
+      "2": "on",
+      "3": "on",
+      "4": "on",
+      "5": "on",
+      "6": "off"
     }
   }
 }

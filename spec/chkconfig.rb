@@ -9,5 +9,3 @@ SERVICES.each_line do |service|
   runlv = Hash[*runlvs.scan(/\d*\w+/)]
   @service_fact.merge!( svc => runlv)
 end
-
-puts @service_fact
