@@ -1,14 +1,17 @@
 require 'rake'
 require 'rspec/core/rake_task'
 
-namespace :before do
-  targets = []
-  Dir.glob('./nodes/*').each do |dir|
-    next unless File.directory?(dir)
-    target = File.basename(dir)
-    target = "_#{target}" if target == "default"
-    targets << target
-  end
+desc "ex) rake LOGIN_PASSWORD='password' gather[centos6_ssh,before]"
+task :gather, ['TARGET_HOST', 'TIMING'] do |t, args|
+  ENV['TARGET_HOST'] = args['TARGET_HOST']
+  ENV['TIMING'] = "#{args['TIMING']}"
+  ruby "spec/gather_fact_spec.rb"
+  puts "aaa"
+end
+
+=begin
+namespace :gather do
+  targets = ['centos6_ssh', 'centos7_ssh']
 
   task :all     => targets
   task :default => :all
@@ -16,8 +19,6 @@ namespace :before do
   targets.each do |target|
     original_target = target == "_default" ? target[1..-1] : target
     desc "Gather fact of #{original_target}"
-    desc "ather fact of #{original_target}"
-    desc "ther fact of #{original_target}"
     RSpec::Core::RakeTask.new(target.to_sym) do |t|
       ENV['FACT_TIMING'] = "before"
       ENV['TARGET_HOST'] = original_target
@@ -25,7 +26,6 @@ namespace :before do
     end
   end
 end
-
 namespace :after do
   targets = []
   Dir.glob('./nodes/*').each do |dir|
@@ -64,3 +64,4 @@ namespace :diff do
     end
   end
 end
+=end
