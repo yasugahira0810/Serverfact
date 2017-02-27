@@ -43,3 +43,26 @@ rake diff:memory
 - 出力されるjsonはトップレベルで分割した方がいい気がしている。
   + ネストが深くなるの嫌なので、全体的に1つ浅くなるのは嬉しい。
   + ハッシュが同じならまるっと比較すっ飛ばす、みたいな処理ができるようになる。
+- 今までbefore, afterでしか考えていなかったが、node#1とnode#2で差分がないか確認したい  
+  というケースもあるだろうから、そこにも対応したい。before, afterは引数として取るように  
+  するか。。。
+- [ここ](http://www.ownway.info/Ruby/rake/arguments)を見ると、rakeにコマンドライン引数を  
+  渡す方法は引数定義するか環境変数使うかと記載されている。  
+  悩ましいけど、自分以外のユーザに使ってもらうことを考えると、環境変数より引数定義の方が  
+  いい気がするので、今回はそう実装する。
+  + 引数定義で実装しようとしてRakefikeを改めて確認したところ、Rakeタスクの実行部分が、  
+    RSpecによってラッピングされているっぽかった。これで引数定義できるのか、ドキュメントを  
+    ちょっと探したくらいではわからなかった。
+
+```
+RSpec::Core::RakeTask.new(target.to_sym) do |t|
+```
+
+  + そこで、gather部分はRSpec, Serverspecには依存していない気がしたので、脱RSpec, Serverspecを  
+    して、Rakeタスクで引数定義をしようとトライした。  
+    しかしgather部分もspec_helperにがっつり依存していたので、require部分書き換える必要があり、  
+    厳しい感じだった。特にret = Specinfra::Runner.run_command('chkconfig --list').stdoutの  
+    実行時にstack level too deep (SystemStackError)というエラーが出て、解決が難しそうだった。  
+    なので今回は、引数定義および脱RSpec, Serverspecは断念し、環境変数でTARGET_HOST, TIMINGを  
+    渡せるようにしようと思う。TARGET_HOSTディレクトリ配下にTIMING.jsonを吐く感じかな。  
+    try_departure_from_serverspecブランチは捨てる。
