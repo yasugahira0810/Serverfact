@@ -6,23 +6,23 @@
       "free": "4097020kB"
     },
     "total": "2047088kB",
-    "free": "1352048kB",
-    "buffers": "41388kB",
-    "cached": "424940kB",
-    "active": "328028kB",
-    "inactive": "245304kB",
-    "dirty": "80kB",
+    "free": "1338876kB",
+    "buffers": "44288kB",
+    "cached": "429548kB",
+    "active": "338304kB",
+    "inactive": "245208kB",
+    "dirty": "76kB",
     "writeback": "0kB",
-    "anon_pages": "106992kB",
-    "mapped": "82488kB",
-    "slab": "103180kB",
-    "slab_reclaimable": "76396kB",
-    "slab_unreclaim": "26784kB",
-    "page_tables": "2480kB",
+    "anon_pages": "109580kB",
+    "mapped": "84872kB",
+    "slab": "106048kB",
+    "slab_reclaimable": "77508kB",
+    "slab_unreclaim": "28540kB",
+    "page_tables": "2672kB",
     "nfs_unstable": "0kB",
     "bounce": "0kB",
     "commit_limit": "5120564kB",
-    "committed_as": "918352kB",
+    "committed_as": "989000kB",
     "vmalloc_total": "34359738367kB",
     "vmalloc_used": "0kB",
     "vmalloc_chunk": "0kB",
@@ -33,16 +33,16 @@
     "huge_pages_surp": "0",
     "huge_page_size": "2048kB"
   },
-  "hostname": "ed215288b3c7",
+  "hostname": "fbe06eb7214f",
   "domain": "",
-  "fqdn": "ed215288b3c7",
+  "fqdn": "fbe06eb7214f",
   "platform": "redhat",
-  "platform_version": "6.8",
+  "platform_version": "7.3.1611",
   "filesystem": {
     "none": {
       "kb_size": "61890340",
-      "kb_used": "38504856",
-      "kb_available": "20218560",
+      "kb_used": "38504888",
+      "kb_available": "20218528",
       "percent_used": "66%",
       "mount": "/"
     },
@@ -55,8 +55,8 @@
     },
     "/dev/sda2": {
       "kb_size": "61890340",
-      "kb_used": "38504856",
-      "kb_available": "20218560",
+      "kb_used": "38504888",
+      "kb_available": "20218528",
       "percent_used": "66%",
       "mount": "/etc/hosts"
     },
@@ -254,6 +254,7 @@
     }
   },
   "virtualization": {
+    "system": null
   },
   "kernel": {
     "machine": "x86_64",
@@ -467,14 +468,6 @@
       "directory": "/var/spool/mail",
       "shell": "/sbin/nologin"
     },
-    "uucp": {
-      "name": "uucp",
-      "uid": "10",
-      "gid": "14",
-      "gecos": "uucp",
-      "directory": "/var/spool/uucp",
-      "shell": "/sbin/nologin"
-    },
     "operator": {
       "name": "operator",
       "uid": "11",
@@ -489,14 +482,6 @@
       "gid": "100",
       "gecos": "games",
       "directory": "/usr/games",
-      "shell": "/sbin/nologin"
-    },
-    "gopher": {
-      "name": "gopher",
-      "uid": "13",
-      "gid": "30",
-      "gecos": "gopher",
-      "directory": "/var/gopher",
       "shell": "/sbin/nologin"
     },
     "ftp": {
@@ -515,12 +500,28 @@
       "directory": "/",
       "shell": "/sbin/nologin"
     },
-    "vcsa": {
-      "name": "vcsa",
-      "uid": "69",
-      "gid": "69",
-      "gecos": "virtual console memory owner",
-      "directory": "/dev",
+    "systemd-bus-proxy": {
+      "name": "systemd-bus-proxy",
+      "uid": "999",
+      "gid": "998",
+      "gecos": "systemd Bus Proxy",
+      "directory": "/",
+      "shell": "/sbin/nologin"
+    },
+    "systemd-network": {
+      "name": "systemd-network",
+      "uid": "192",
+      "gid": "192",
+      "gecos": "systemd Network Management",
+      "directory": "/",
+      "shell": "/sbin/nologin"
+    },
+    "dbus": {
+      "name": "dbus",
+      "uid": "81",
+      "gid": "81",
+      "gecos": "System message bus",
+      "directory": "/",
       "shell": "/sbin/nologin"
     },
     "sshd": {
@@ -530,30 +531,6 @@
       "gecos": "Privilege-separated SSH",
       "directory": "/var/empty/sshd",
       "shell": "/sbin/nologin"
-    },
-    "test": {
-      "name": "test",
-      "uid": "500",
-      "gid": "500",
-      "gecos": "",
-      "directory": "/home/test",
-      "shell": "/bin/bash"
-    },
-    "test2": {
-      "name": "test2",
-      "uid": "501",
-      "gid": "501",
-      "gecos": "",
-      "directory": "/home/test2",
-      "shell": "/bin/bash"
-    },
-    "test3": {
-      "name": "test3",
-      "uid": "502",
-      "gid": "502",
-      "gecos": "",
-      "directory": "/home/test3",
-      "shell": "/bin/bash"
     }
   },
   "group": {
@@ -568,32 +545,28 @@
       "name": "bin",
       "gid": "1",
       "members": [
-        "bin",
-        "daemon"
+
       ]
     },
     "daemon": {
       "name": "daemon",
       "gid": "2",
       "members": [
-        "bin",
-        "daemon"
+
       ]
     },
     "sys": {
       "name": "sys",
       "gid": "3",
       "members": [
-        "bin",
-        "adm"
+
       ]
     },
     "adm": {
       "name": "adm",
       "gid": "4",
       "members": [
-        "adm",
-        "daemon"
+
       ]
     },
     "tty": {
@@ -614,7 +587,7 @@
       "name": "lp",
       "gid": "7",
       "members": [
-        "daemon"
+
       ]
     },
     "mem": {
@@ -638,16 +611,16 @@
 
       ]
     },
+    "cdrom": {
+      "name": "cdrom",
+      "gid": "11",
+      "members": [
+
+      ]
+    },
     "mail": {
       "name": "mail",
       "gid": "12",
-      "members": [
-        "mail"
-      ]
-    },
-    "uucp": {
-      "name": "uucp",
-      "gid": "14",
       "members": [
 
       ]
@@ -659,6 +632,20 @@
 
       ]
     },
+    "dialout": {
+      "name": "dialout",
+      "gid": "18",
+      "members": [
+
+      ]
+    },
+    "floppy": {
+      "name": "floppy",
+      "gid": "19",
+      "members": [
+
+      ]
+    },
     "games": {
       "name": "games",
       "gid": "20",
@@ -666,8 +653,8 @@
 
       ]
     },
-    "gopher": {
-      "name": "gopher",
+    "tape": {
+      "name": "tape",
       "gid": "30",
       "members": [
 
@@ -676,13 +663,6 @@
     "video": {
       "name": "video",
       "gid": "39",
-      "members": [
-
-      ]
-    },
-    "dip": {
-      "name": "dip",
-      "gid": "40",
       "members": [
 
       ]
@@ -736,37 +716,44 @@
 
       ]
     },
-    "floppy": {
-      "name": "floppy",
-      "gid": "19",
+    "input": {
+      "name": "input",
+      "gid": "999",
       "members": [
 
       ]
     },
-    "vcsa": {
-      "name": "vcsa",
-      "gid": "69",
+    "systemd-journal": {
+      "name": "systemd-journal",
+      "gid": "190",
       "members": [
 
       ]
     },
-    "cdrom": {
-      "name": "cdrom",
-      "gid": "11",
+    "systemd-bus-proxy": {
+      "name": "systemd-bus-proxy",
+      "gid": "998",
       "members": [
 
       ]
     },
-    "tape": {
-      "name": "tape",
-      "gid": "33",
+    "systemd-network": {
+      "name": "systemd-network",
+      "gid": "192",
       "members": [
 
       ]
     },
-    "dialout": {
-      "name": "dialout",
-      "gid": "18",
+    "dbus": {
+      "name": "dbus",
+      "gid": "81",
+      "members": [
+
+      ]
+    },
+    "ssh_keys": {
+      "name": "ssh_keys",
+      "gid": "997",
       "members": [
 
       ]
@@ -777,101 +764,101 @@
       "members": [
 
       ]
-    },
-    "test": {
-      "name": "test",
-      "gid": "500",
-      "members": [
-
-      ]
-    },
-    "test2": {
-      "name": "test2",
-      "gid": "501",
-      "members": [
-
-      ]
-    },
-    "test3": {
-      "name": "test3",
-      "gid": "502",
-      "members": [
-
-      ]
     }
   },
   "service": {
-    "iptables": {
-      "0": "off",
-      "1": "off",
-      "2": "on",
-      "3": "on",
-      "4": "on",
-      "5": "on",
-      "6": "off"
-    },
-    "netconsole": {
-      "0": "off",
-      "1": "off",
-      "2": "off",
-      "3": "off",
-      "4": "off",
-      "5": "off",
-      "6": "off"
-    },
-    "netfs": {
-      "0": "off",
-      "1": "off",
-      "2": "off",
-      "3": "on",
-      "4": "on",
-      "5": "on",
-      "6": "off"
-    },
-    "network": {
-      "0": "off",
-      "1": "off",
-      "2": "on",
-      "3": "on",
-      "4": "on",
-      "5": "on",
-      "6": "off"
-    },
-    "rdisc": {
-      "0": "off",
-      "1": "off",
-      "2": "off",
-      "3": "off",
-      "4": "off",
-      "5": "off",
-      "6": "off"
-    },
-    "restorecond": {
-      "0": "off",
-      "1": "off",
-      "2": "off",
-      "3": "off",
-      "4": "off",
-      "5": "off",
-      "6": "off"
-    },
-    "sshd": {
-      "0": "off",
-      "1": "off",
-      "2": "on",
-      "3": "on",
-      "4": "on",
-      "5": "on",
-      "6": "off"
-    },
-    "udev-post": {
-      "0": "off",
-      "1": "on",
-      "2": "on",
-      "3": "on",
-      "4": "on",
-      "5": "on",
-      "6": "off"
-    }
+    "autovt@.service": "enabled",
+    "blk-availability.service": "disabled",
+    "console-getty.service": "disabled",
+    "console-shell.service": "disabled",
+    "container-getty@.service": "static",
+    "dbus-org.freedesktop.hostname1.service": "static",
+    "dbus-org.freedesktop.import1.service": "static",
+    "dbus-org.freedesktop.locale1.service": "static",
+    "dbus-org.freedesktop.login1.service": "static",
+    "dbus-org.freedesktop.machine1.service": "static",
+    "dbus-org.freedesktop.network1.service": "bad",
+    "dbus-org.freedesktop.timedate1.service": "static",
+    "dbus.service": "static",
+    "debug-shell.service": "disabled",
+    "dracut-cmdline.service": "static",
+    "dracut-initqueue.service": "static",
+    "dracut-mount.service": "static",
+    "dracut-pre-mount.service": "static",
+    "dracut-pre-pivot.service": "static",
+    "dracut-pre-trigger.service": "static",
+    "dracut-pre-udev.service": "static",
+    "dracut-shutdown.service": "static",
+    "emergency.service": "static",
+    "fstrim.service": "static",
+    "getty@.service": "enabled",
+    "halt-local.service": "static",
+    "initrd-cleanup.service": "static",
+    "initrd-parse-etc.service": "static",
+    "initrd-switch-root.service": "static",
+    "initrd-udevadm-cleanup-db.service": "static",
+    "kmod-static-nodes.service": "static",
+    "messagebus.service": "static",
+    "quotaon.service": "static",
+    "rc-local.service": "static",
+    "rdisc.service": "disabled",
+    "rescue.service": "static",
+    "rsyncd.service": "disabled",
+    "rsyncd@.service": "static",
+    "serial-getty@.service": "disabled",
+    "sshd-keygen.service": "static",
+    "sshd.service": "enabled",
+    "sshd@.service": "static",
+    "systemd-ask-password-console.service": "static",
+    "systemd-ask-password-wall.service": "static",
+    "systemd-backlight@.service": "static",
+    "systemd-binfmt.service": "static",
+    "systemd-bootchart.service": "disabled",
+    "systemd-firstboot.service": "static",
+    "systemd-fsck-root.service": "static",
+    "systemd-fsck@.service": "static",
+    "systemd-halt.service": "static",
+    "systemd-hibernate-resume@.service": "static",
+    "systemd-hibernate.service": "static",
+    "systemd-hostnamed.service": "static",
+    "systemd-hwdb-update.service": "static",
+    "systemd-hybrid-sleep.service": "static",
+    "systemd-importd.service": "static",
+    "systemd-initctl.service": "static",
+    "systemd-journal-catalog-update.service": "static",
+    "systemd-journal-flush.service": "static",
+    "systemd-journald.service": "static",
+    "systemd-kexec.service": "static",
+    "systemd-localed.service": "static",
+    "systemd-logind.service": "static",
+    "systemd-machine-id-commit.service": "static",
+    "systemd-machined.service": "static",
+    "systemd-modules-load.service": "static",
+    "systemd-nspawn@.service": "disabled",
+    "systemd-poweroff.service": "static",
+    "systemd-quotacheck.service": "static",
+    "systemd-random-seed.service": "static",
+    "systemd-readahead-collect.service": "enabled",
+    "systemd-readahead-done.service": "indirect",
+    "systemd-readahead-drop.service": "enabled",
+    "systemd-readahead-replay.service": "enabled",
+    "systemd-reboot.service": "static",
+    "systemd-remount-fs.service": "static",
+    "systemd-rfkill@.service": "static",
+    "systemd-shutdownd.service": "static",
+    "systemd-suspend.service": "static",
+    "systemd-sysctl.service": "static",
+    "systemd-timedated.service": "static",
+    "systemd-tmpfiles-clean.service": "static",
+    "systemd-tmpfiles-setup-dev.service": "static",
+    "systemd-tmpfiles-setup.service": "static",
+    "systemd-udev-settle.service": "static",
+    "systemd-udev-trigger.service": "static",
+    "systemd-udevd.service": "static",
+    "systemd-update-done.service": "static",
+    "systemd-update-utmp-runlevel.service": "static",
+    "systemd-update-utmp.service": "static",
+    "systemd-user-sessions.service": "static",
+    "systemd-vconsole-setup.service": "static"
   }
 }
