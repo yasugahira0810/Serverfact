@@ -22,7 +22,7 @@ KEYS = %w{
   group
 }
 
-$stdout = File.open("nodes/#{ENV['TARGET_HOST']}/#{ENV['FACT_TIMING']}.json", "w")
+$stdout = File.open("nodes/#{ENV['TARGET_HOST']}/#{ENV['TIMING']}.json", "w")
 
 fact = {}
 

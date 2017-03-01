@@ -66,3 +66,34 @@ RSpec::Core::RakeTask.new(target.to_sym) do |t|
     なので今回は、引数定義および脱RSpec, Serverspecは断念し、環境変数でTARGET_HOST, TIMINGを  
     渡せるようにしようと思う。TARGET_HOSTディレクトリ配下にTIMING.jsonを吐く感じかな。  
     try_departure_from_serverspecブランチは捨てる。
+
+- RSpecで引数定義する方法が[ここ](https://www.relishapp.com/rspec/rspec-core/docs/command-line/rake-task)にあった。
+
+```ruby
+begin
+  require 'rspec/core/rake_task'
+
+  RSpec::Core::RakeTask.new(:spec, :tag) do |t, task_args|
+    t.rspec_opts = "--tag #{task_args[:tag]}"
+  end
+rescue LoadError
+  # no rspec available
+end
+```
+複数の引数指定もできそう。これで事前にファイルやらディレクトリやら作らずにrake叩けそう。
+```ruby
+    RSpec::Core::RakeTask.new(target.to_sym, :arg1, :arg2) do |t, b|
+      ENV['FACT_TIMING'] = "before"
+      ENV['TARGET_HOST'] = original_target
+      puts "******** #{b[:arg1]}   **********"
+      puts "******** #{b[:arg2]}   **********"
+      t.pattern = "spec/gather_fact_spec.rb"
+    end
+```
+
+gather:TARGET_HOST[TIMING] TARGET_HOSTディレクトリ配下にTIMING.jsonファイルを生成する。
+diff:TARGET_HOST[BEFORE,AFTER] TARGET_HOSTディレクトリのBEFORE.jsonとAFTER.jsonのdiffをとる。
+別々のTARGET_HOSTのdiffをとりたい場合もあるかもしれないが、そこまでサポートするとツールの  
+作りがめちゃめちゃになっちゃいそうなので、その場合はjsonを手動で同じディレクトリに格納して  
+もらう設計にしようと思う。
+

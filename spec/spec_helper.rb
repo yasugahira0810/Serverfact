@@ -1,6 +1,6 @@
 require 'serverspec'
 
-if ENV['FACT_TIMING'] == "diff" then
+if ENV['TIMING'] == "diff" then
   set :backend, :exec
 else
   require 'net/ssh'
