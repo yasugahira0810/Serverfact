@@ -1,8 +1,8 @@
 require 'serverspec'
 
-if ENV['TIMING'] == "diff" then
+if ENV['NAMESPACE'] == "diff" then
   set :backend, :exec
-else
+elsif ENV['NAMESPACE'] == "before" || ENV['NAMESPACE'] == "after" then
   require 'net/ssh'
   
   set :backend, :ssh

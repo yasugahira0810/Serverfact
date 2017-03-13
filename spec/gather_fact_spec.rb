@@ -22,7 +22,9 @@ KEYS = %w{
   group
 }
 
-$stdout = File.open("nodes/#{ENV['TARGET_HOST']}/#{ENV['TIMING']}.json", "w")
+path = "nodes/#{ENV['TARGET_HOST']}"
+FileUtils.mkdir_p(path) unless FileTest.exist?(path)
+$stdout = File.open("#{path}/#{ENV['NAMESPACE']}.json", "w")
 
 fact = {}
 
