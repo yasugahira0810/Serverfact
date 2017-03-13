@@ -97,3 +97,24 @@ diff:TARGET_HOST[BEFORE,AFTER] TARGET_HOSTディレクトリのBEFORE.jsonとAFT
 作りがめちゃめちゃになっちゃいそうなので、その場合はjsonを手動で同じディレクトリに格納して  
 もらう設計にしようと思う。
 
+## 2017/03/13
+
+- 上記まででrakeコマンドの柔軟性がわかった。またその後の検証の結果、以下のコマンドが実行される  
+  までにtargetに実行対象のホストが入っていれば、rspecは実行できることがわかった。  
+  つまり事前に実行対象のホストを定義しておかなくても、rakeコマンドの引数からホスト名を引っぱって  
+  くれば動的にホスト名を指定してrspec実行可能。
+
+RSpec::Core::RakeTask.new(target.to_sym, :timing) do |tgt, tmg|
+
+- ここまで、rakeやrspecがどれだけ柔軟にできるかを確認してきて、かなりの柔軟性があることはわかった。  
+  でもツールとしてその柔軟性をフルに使う必要はない気がしてきた。とにかくシンプルにしておきたいので、  
+  以下のようにしようと思う。
+
+1. namespaceはbefore, after, diffの３種類。taskにホスト名を入れる。taskの引数は使わない。
+1. ホスト名は事前に定義していなくても良い。
+
+```ruby
+rake before:centos6_ssh
+rake after:centos6_ssh
+rake diff:centos6_ssh
+```

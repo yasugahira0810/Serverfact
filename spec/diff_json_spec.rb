@@ -1,13 +1,13 @@
 require 'spec_helper'
 require 'json'
 
-#HOSTNAME = ARGV[1].split("/")[1]
+path = "nodes/#{ENV['TARGET_HOST']}"
 
-before_fact = open("spec/#{ENV['TARGET_HOST']}/before.json") do |io|
+before_fact = open("#{path}/before.json") do |io|
   JSON.load(io)
 end
 
-after_fact = open("spec/#{ENV['TARGET_HOST'] }/after.json") do |io|
+after_fact = open("#{path}/after.json") do |io|
   JSON.load(io)
 end
 
