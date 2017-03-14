@@ -54,7 +54,7 @@ namespace :diff do
     end
   end
 
-  desc "Display diff between before.json and after.json"
+  desc "Test before.json using after.json's key. REVERSE flag will test them in reverse."
   RSpec::Core::RakeTask.new(target.to_sym) do |t|
     ENV['NAMESPACE'] = 'diff'
     ENV['TARGET_HOST'] = target
