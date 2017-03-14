@@ -11,15 +11,27 @@ else
   AFTER_JSON = "#{PATH}/before.json"
 end
 
-BEFORE_HASH = open(BEFORE_JSON) do |io|
+before_hash = open(BEFORE_JSON) do |io|
   JSON.load(io)
 end
 
-AFTER_HASH = open(AFTER_JSON) do |io|
+after_hash = open(AFTER_JSON) do |io|
   JSON.load(io)
 end
 
-BEFORE_HASH.each do |key1, val1|
+unless (ENV['TARGET']).nil? then
+  target_keys = ENV['TARGET'].split(',')
+  temp_hash = {}
+  target_keys.each do |t|
+    unless before_hash.keys.include?(t) then
+      raise "No such key #{t}"
+    end
+    temp_hash.merge!( t => before_hash[t])
+  end
+  before_hash = temp_hash
+end
+
+before_hash.each do |key1, val1|
   if val1.is_a?(String) then
     describe file(AFTER_JSON) do
       its(:content_as_json) { should include(key1 => val1) }
