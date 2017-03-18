@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'json'
+require 'digest/md5'
 
 PATH = "nodes/#{ENV['TARGET_HOST']}"
 
@@ -11,30 +12,35 @@ else
   AFTER_PATH = "#{PATH}/before"
 end
 
-before_jsons = []
-after_jsons = []
+before_json_files = {}
+after_json_files = {}
 
 Dir.foreach(BEFORE_PATH) do |f|
   next if f == '.' or f == '..'
-  before_jsons.push(f.split(/.json$/))
+  md5 = Digest::MD5.file("#{BEFORE_PATH}/#{f}").to_s
+  #f.slice!(/.json$/)
+  before_json_files.merge!( f => md5 )
 end
 
 Dir.foreach(AFTER_PATH) do |f|
   next if f == '.' or f == '..'
-  after_jsons.push(f.split(/.json$/))
+  md5 = Digest::MD5.file("#{AFTER_PATH}/#{f}").to_s
+  after_json_files.merge!( f => md5 )
 end
 
+mismatch_jsons = []
 
+before_json_files.each do |f, md5|
+  describe file("#{AFTER_PATH}/#{f}") do
+    its(:md5sum) { should eq md5 }
+  end
+  # [TODO] This comparison is redundant. There is still room for improvement. 
+  mismatch_jsons.push(f) if before_json_files[f] != after_json_files[f]
+end
+
+p mismatch_jsons
 
 =begin
-before_hash = open(BEFORE_JSON) do |io|
-  JSON.load(io)
-end
-
-after_hash = open(AFTER_JSON) do |io|
-  JSON.load(io)
-end
-
 unless (ENV['TARGET']).nil? then
   target_keys = ENV['TARGET'].split(',')
   temp_hash = {}
@@ -46,6 +52,7 @@ unless (ENV['TARGET']).nil? then
   end
   before_hash = temp_hash
 end
+=end
 
 before_hash.each do |key1, val1|
   if val1.is_a?(String) then
