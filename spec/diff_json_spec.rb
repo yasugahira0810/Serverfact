@@ -4,13 +4,29 @@ require 'json'
 PATH = "nodes/#{ENV['TARGET_HOST']}"
 
 unless ENV['REVERSE'] == '1' then
-  BEFORE_JSON = "#{PATH}/before.json"
-  AFTER_JSON = "#{PATH}/after.json"
+  BEFORE_PATH = "#{PATH}/before"
+  AFTER_PATH = "#{PATH}/after"
 else
-  BEFORE_JSON = "#{PATH}/after.json"
-  AFTER_JSON = "#{PATH}/before.json"
+  BEFORE_PATH = "#{PATH}/after"
+  AFTER_PATH = "#{PATH}/before"
 end
 
+before_jsons = []
+after_jsons = []
+
+Dir.foreach(BEFORE_PATH) do |f|
+  next if f == '.' or f == '..'
+  before_jsons.push(f.split(/.json$/))
+end
+
+Dir.foreach(AFTER_PATH) do |f|
+  next if f == '.' or f == '..'
+  after_jsons.push(f.split(/.json$/))
+end
+
+
+
+=begin
 before_hash = open(BEFORE_JSON) do |io|
   JSON.load(io)
 end
@@ -72,3 +88,4 @@ before_hash.each do |key1, val1|
     end
   end
 end
+=end

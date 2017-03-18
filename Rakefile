@@ -1,16 +1,6 @@
 require 'rake'
 require 'rspec/core/rake_task'
 
-=begin
-desc "rake TARGET_HOST='127.0.0.1' TIMING='before' gather"
-RSpec::Core::RakeTask.new(:gather) do |t|
-  directory ENV['TARGET_HOST']
-  t.pattern = "spec/gather_fact_spec.rb"
-end  
-
-desc "diff"
-=end
-
 namespace :before do
   target = 'TARGET_HOST'
   ARGV.each do |arg|
@@ -24,7 +14,7 @@ namespace :before do
   RSpec::Core::RakeTask.new(target.to_sym) do |t|
     ENV['NAMESPACE'] = 'before'
     ENV['TARGET_HOST'] = target
-    t.pattern = "spec/gather_fact_spec.rb"
+    t.pattern = "spec/gather_*_inventory_spec.rb"
   end
 end
 
@@ -41,7 +31,7 @@ namespace :after do
   RSpec::Core::RakeTask.new(target.to_sym) do |t|
     ENV['NAMESPACE'] = 'after'
     ENV['TARGET_HOST'] = target
-    t.pattern = "spec/gather_fact_spec.rb"
+    t.pattern = "spec/gather_*_inventory_spec.rb"
   end
 end
 
