@@ -49,6 +49,6 @@ namespace :diff do
     ENV['NAMESPACE'] = 'diff'
     ENV['TARGET_HOST'] = target
     t.pattern = "spec/diff_json_spec.rb"
-    t.rspec_opts = "--require ./spec/serverfact_formatter.rb --format ServerfactFormatter"
+    #t.rspec_opts = "--require ./spec/serverfact_formatter.rb --format ServerfactFormatter" //TODO Consider how to deal
   end
 end

@@ -1,8 +1,10 @@
 require 'spec_helper'
 
 SYSTEMCTL_STDOUT = Specinfra::Runner::run_command('systemctl list-unit-files --type service').stdout
-
 SERVICES = ""
+
+@original_inventory = {}
+@original_inventory['service'] = {}
 
 SYSTEMCTL_STDOUT.each_line do |line|
   next line if /^UNIT\s*FILE\s*STATE\s*$/ =~ line
@@ -11,10 +13,8 @@ SYSTEMCTL_STDOUT.each_line do |line|
   SERVICES << line
 end
 
-@service_fact = {}
-
 SERVICES.each_line do |service|
   unit_file, state = service.split
 #  unit_file, state = service.split(" ", 2)
-  @service_fact.merge!(unit_file => state)
+  @original_inventory['service'].merge!(unit_file => state)
 end
