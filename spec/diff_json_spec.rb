@@ -43,59 +43,45 @@ before_hash = {}
 after_hash = {}
 
 mismatch_jsons.each do |f|
-  before_hash.merge!(open("#{BEFORE_PATH}/#{f}.json") do |io|
-    JSON.load(io)
-  end)
-  after_hash.merge!(open("#{AFTER_PATH}/#{f}.json") do |io|
-    JSON.load(io)
-  end)
-end
-
-=begin //TODO Consider how to deal
-unless (ENV['TARGET']).nil? then
-  target_keys = ENV['TARGET'].split(',')
-  temp_hash = {}
-  target_keys.each do |t|
-    unless before_hash.keys.include?(t) then
-      raise "No such key #{t}"
-    end
-    temp_hash.merge!( t => before_hash[t])
+  File.open("#{BEFORE_PATH}/#{f}.json") do |io|
+    before_hash = JSON.load(io)
   end
-  before_hash = temp_hash
-end
-=end
+  File.open("#{AFTER_PATH}/#{f}.json") do |io|
+    after_hash = JSON.load(io)
+  end
 
-before_hash.each do |key1, val1|
-  if val1.is_a?(String) then
-    describe file("#{AFTER_PATH}/#{key1}.json") do
-      its(:content_as_json) { should include(key1 => val1) }
-    end
-  elsif !val1.nil?
-    val1.each do |key2, val2|
-      if val2.is_a?(String) then
-        describe file("#{AFTER_PATH}/#{key1}.json") do
-          its(:content_as_json) { should include(key1 => include(key2 => val2)) }
-        end
-      elsif !val2.nil?
-        val2.each do |key3, val3|
-          if val3.is_a?(String) then
-            describe file("#{AFTER_PATH}/#{key1}.json") do
-              its(:content_as_json) { should include(key1 => include(key2 => include(key3 => val3))) }
-            end
-          elsif !val3.nil?
-            val3.each do |key4, val4|
-              if val4.is_a?(String) then
-                describe file("#{AFTER_PATH}/#{key1}.json") do
-                  its(:content_as_json) { should include(key1 => include(key2 => include(key3 => include(key4 => val4)))) }
-                end
-              elsif !val4.nil?
-                val4.each do |key5, val5|
-                  if val5.is_a?(String) then
-                    describe file("#{AFTER_PATH}/#{key1}.json") do
-                      its(:content_as_json) { should include(key1 => include(key2 => include(key3 => include(key4 => include(key5 => val5))))) }
+  before_hash.each do |key1, val1|
+    if val1.is_a?(String) then
+      describe file("#{AFTER_PATH}/#{key1}.json") do
+        its(:content_as_json) { should include(key1 => val1) }
+      end
+    elsif !val1.nil?
+      val1.each do |key2, val2|
+        if val2.is_a?(String) then
+          describe file("#{AFTER_PATH}/#{key1}.json") do
+            its(:content_as_json) { should include(key1 => include(key2 => val2)) }
+          end
+        elsif !val2.nil?
+          val2.each do |key3, val3|
+            if val3.is_a?(String) then
+              describe file("#{AFTER_PATH}/#{key1}.json") do
+                its(:content_as_json) { should include(key1 => include(key2 => include(key3 => val3))) }
+              end
+            elsif !val3.nil?
+              val3.each do |key4, val4|
+                if val4.is_a?(String) then
+                  describe file("#{AFTER_PATH}/#{key1}.json") do
+                    its(:content_as_json) { should include(key1 => include(key2 => include(key3 => include(key4 => val4)))) }
+                  end
+                elsif !val4.nil?
+                  val4.each do |key5, val5|
+                    if val5.is_a?(String) then
+                      describe file("#{AFTER_PATH}/#{key1}.json") do
+                        its(:content_as_json) { should include(key1 => include(key2 => include(key3 => include(key4 => include(key5 => val5))))) }
+                      end
+                    else
+                      raise 'error'
                     end
-                  else
-                    raise 'error'
                   end
                 end
               end
