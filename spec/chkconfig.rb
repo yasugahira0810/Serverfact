@@ -1,12 +1,20 @@
 require 'spec_helper'
 
-SERVICES = Specinfra::Runner::run_command('chkconfig --list').stdout
+@original_inventory = {'service' => {}}
+@original_inventory['service'].update('enabled' => {})
+@original_inventory['service'].update('running' => {})
 
-@original_inventory = {}
-@original_inventory['service'] = {}
+# CREATE ENABLED HASH
+ENABLED = Specinfra::Runner::run_command('chkconfig --list').stdout
 
-SERVICES.each_line do |service|
+ENABLED.each_line do |service|
   svc, runlvs = service.split(" ", 2)
   runlv = Hash[*runlvs.scan(/\d*\w+/)]
-  @original_inventory['service'].merge!(svc => runlv)
+  @original_inventory['service']['enabled'].merge!(svc => runlv)
+end
+
+# CREATE RUNNING HASH
+@original_inventory['service']['enabled'].keys.each do |service|
+  running = Specinfra::Runner::run_command("service #{service} status").exit_status.to_s
+  @original_inventory['service']['running'].merge!(service => running)
 end
