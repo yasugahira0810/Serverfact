@@ -1,9 +1,9 @@
 Host centos6_ssh
-  HostName 192.168.11.2
-  User root
-  Port 32769
-
-Host centos7_ssh
-  HostName 192.168.11.2
+  HostName 192.168.225.22
   User root
   Port 32768
+
+Host centos7_ssh
+  HostName 192.168.225.22
+  User root
+  Port 32769

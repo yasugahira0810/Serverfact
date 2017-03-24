@@ -44,11 +44,11 @@ namespace :diff do
     end
   end
 
-  desc "Test before.json using after.json's key. REVERSE flag will test them in reverse."
+  desc "Test before.json using after.json's key, REVERSE flag will test them in reverse."
   RSpec::Core::RakeTask.new(target.to_sym) do |t|
     ENV['NAMESPACE'] = 'diff'
     ENV['TARGET_HOST'] = target
     t.pattern = "spec/diff_json_spec.rb"
-    #t.rspec_opts = "--require ./spec/serverfact_formatter.rb --format ServerfactFormatter" //TODO Consider how to deal
+    t.rspec_opts = "--require ./spec/serverfact_formatter.rb --format ServerfactFormatter"
   end
 end
