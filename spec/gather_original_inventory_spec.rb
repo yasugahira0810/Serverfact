@@ -8,8 +8,6 @@ elsif host_inventory['platform'] == "redhat" && host_inventory['platform_version
   require './spec/systemctl.rb'
 end
 
-puts "platform #{host_inventory['platform']}, version #{host_inventory['platform_version']}"
-
 keys = %w{
   service
 }
