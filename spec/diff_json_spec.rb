@@ -4,7 +4,7 @@ require 'digest/md5'
 
 PATH = "nodes/#{ENV['TARGET_HOST']}"
 
-unless ENV['REVERSE'] == '1' then
+if !ENV['REVERSE'].nil? then
   BEFORE_PATH = "#{PATH}/before"
   AFTER_PATH = "#{PATH}/after"
 else
@@ -37,6 +37,13 @@ before_json_files.each do |f, md5|
   end
   # [TODO] This comparison is redundant. There is still room for improvement. 
   mismatch_jsons.push(f) if before_json_files[f] != after_json_files[f]
+end
+
+if !ENV['ONLY'].nil? && before_json_files.keys.include?(ENV['ONLY']) then
+  mismatch_jsons = [ ENV['ONLY'] ]
+else
+  puts "No such inventory"
+  exit
 end
 
 before_hash = {}
