@@ -4,6 +4,7 @@ require 'digest/md5'
 
 PATH = "nodes/#{ENV['TARGET_HOST']}"
 
+# REVERSE OPTION
 if !ENV['REVERSE'].nil? then
   BEFORE_PATH = "#{PATH}/before"
   AFTER_PATH = "#{PATH}/after"
@@ -31,19 +32,30 @@ end
 
 mismatch_jsons = []
 
+# ONLY OPTION
+if !ENV['ONLY'].nil? && before_json_files.keys.include?(ENV['ONLY']) then
+  mismatch_jsons = [ ENV['ONLY'] ]
+  before_json_files.select!{|k, v| k == ENV['ONLY']}
+elsif !ENV['ONLY'].nil?
+  puts "No such inventory: ENV['ONLY'] = #{ENV['ONLY']}"
+  exit
+end
+
+# EXCEPT OPTION
+if !ENV['EXCEPT'].nil? && before_json_files.keys.include?(ENV['EXCEPT']) then
+  before_json_files.reject!{|k, v| k == ENV['EXCEPT']}
+elsif !ENV['EXCEPT'].nil?
+  puts "No such inventory: ENV['EXCEPT'] = #{ENV['EXCEPT']}"
+  exit
+end
+
+
 before_json_files.each do |f, md5|
   describe file("#{AFTER_PATH}/#{f}.json") do
     its(:md5sum) { should eq md5 }
   end
   # [TODO] This comparison is redundant. There is still room for improvement. 
   mismatch_jsons.push(f) if before_json_files[f] != after_json_files[f]
-end
-
-if !ENV['ONLY'].nil? && before_json_files.keys.include?(ENV['ONLY']) then
-  mismatch_jsons = [ ENV['ONLY'] ]
-else
-  puts "No such inventory"
-  exit
 end
 
 before_hash = {}
